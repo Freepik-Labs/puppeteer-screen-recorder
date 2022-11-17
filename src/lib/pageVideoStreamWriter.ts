@@ -26,7 +26,7 @@ const SUPPORTED_FILE_FORMATS = [
  * @ignore
  */
 export default class PageVideoStreamWriter extends EventEmitter {
-  private readonly screenLimit = 40;
+  private screenLimit = 40;
   private screenCastFrames = [];
   private lastProcessedFrame: pageScreenFrame;
   public duration = '00:00:00:00';
@@ -42,6 +42,10 @@ export default class PageVideoStreamWriter extends EventEmitter {
 
     if (options) {
       this.options = options;
+
+      if (options.screenLimit) {
+        this.screenLimit = options.screenLimit;
+      }
     }
 
     const isWritable = this.isWritableStream(destinationSource);

@@ -36,6 +36,16 @@ export type PuppeteerScreenRecorderOptions = {
    */
   readonly fps?: number;
 
+
+
+  /**
+   * @name screenLimit
+   * @member PuppeteerScreenRecorderOptions
+   * @description Max frames to be keep in memory before writing to disk
+   * @default 40
+   */
+   readonly screenLimit?: number;
+
   /**
    * @name quality
    * @member PuppeteerScreenRecorderOptions
